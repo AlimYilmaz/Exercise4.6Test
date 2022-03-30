@@ -28,7 +28,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("test if articleCount returns zero when null")
     public void testIfArticleCountIsZeroWhenArticlesNull()
-    {Assertions.assertTrue(ctrl.getArticleCount() = 0);}
+    {Assertions.assertEquals(ctrl.getArticleCount(),0);}
 
     @Test
     @DisplayName("test if getTopHeadLinesAustria is empty  when null")
@@ -45,7 +45,7 @@ public class AppControllerTest {
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
 
-        List<Article> filteredList = ctrl.filteredList("Gestern", articles);
+        List<Article> filteredList = ctrl.filterList("Gestern", articles);
         Assertions.assertTrue(filteredList.size() != 0);
     }
 

@@ -7,6 +7,7 @@ import java.util.List;
 public class AppController {
 
     private List<Article> articles;
+    private static int count = 0;
 
 
     public AppController() {
@@ -17,6 +18,33 @@ public class AppController {
     articles = new ArrayList<>();
     }
 
+    public int getArticleCount() {
+      if (articles == null){
+          return 0;
+      }
+      else {
+          return articles.size();
+      }
+    }
+
+    public List<Article> getTopHeadlines(List<Article> articles) {
+
+        return articles;
+    }
+
+    protected List<Article> filterList(String query, List<Article> articles) {
+        List<Article> filteredList = new ArrayList<>();
+        for (int i = 0; i < articles.size(); i++) {
+            if (articles.get(i).getTitle().toLowerCase().contains("Query")) {}
+        }
+        return filteredList;
+
+//        for (String query : articles) {
+//            if(articles.contains("Query")){
+//                filteredList.add(articles.get());
+//            }
+//        }
+    }
 
     private static List<Article> generateMockList() {
 
