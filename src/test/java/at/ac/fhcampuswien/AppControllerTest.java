@@ -72,12 +72,15 @@ public class AppControllerTest {
     @Test
     @DisplayName("test checks if the word bitcoin is contained in the list")
     public void TestIfFilterListContainsBitcoin(){
+        //to have something to filter
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
         articles.add(new Article("Stephen King","I.T."));
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
         articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+
+        ctrl.setArticles(articles);
 
         List<Article> NewsAboutBitcoinList = ctrl.getAllNewsBitcoin();
 
