@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private AppController controller;
+    private AppController controller = new AppController();
     private static final String INVALID_INPUT_MESSAGE = "Invalid input! Please choose a valid option!";
     private static final String EXIT_MESSAGE = "Thank you for using our service! Bye!";
 
@@ -15,12 +15,12 @@ public class Menu {
         Scanner scan = new Scanner(System.in);
         printMenu();
 
-        String option = scan.next();
+//        String input = scan.next();
         handleInputString(scan.next());
     }
 
 
-     private void handleInputString(String input) {
+    private void handleInputString(String input) {
 
         switch (input) {
 
@@ -38,19 +38,20 @@ public class Menu {
             default:
                 printInvalidInputMessage();
         }
-}
+    }
 
 
     private void getArticleCount(AppController ctrl) {
+        System.out.println(ctrl.getArticleCount());
 
     }
 
     private void getTopHeadlinesAustria(AppController ctrl) {
-
+        System.out.println(ctrl.getTopHeadlinesAustria().toString());
     }
 
     private void getAllNewsBitcoin(AppController ctrl) {
-
+        System.out.println(ctrl.getAllNewsBitcoin().toString());
     }
 
     public static void printMenu() {

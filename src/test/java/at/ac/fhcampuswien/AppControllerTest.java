@@ -31,7 +31,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("test if articleCount return the number of the articles we have")
     public void testIfArticleCountIs4()
-    {Assertions.assertEquals(ctrl.getArticleCount(),4);}
+    {Assertions.assertEquals(4, ctrl.getArticleCount(),4);}
 
     @Test
     @DisplayName("test if getTopHeadLinesAustria is empty when it has elements in there")
@@ -65,8 +65,8 @@ public class AppControllerTest {
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
 
-        List<Article> filteredList = ctrl.filterList("gestern", articles);
-        Assertions.assertTrue(filteredList.size() != 0);
+        List<Article> filteredList = ctrl.filterList("Gestern", articles);
+        Assertions.assertTrue(filteredList.size() == 1);
     }
 
     @Test
@@ -84,13 +84,14 @@ public class AppControllerTest {
 
         List<Article> NewsAboutBitcoinList = ctrl.getAllNewsBitcoin();
 
-        for (int i = 0; i < NewsAboutBitcoinList.size(); i++) {
-            System.out.println(NewsAboutBitcoinList.get(i));
+        List<Article> newsAboutBitcoinList = ctrl.getAllNewsBitcoin();
+        boolean containsBitcoin = false;
+        for (Article article: newsAboutBitcoinList) {
+            if (article.getTitle().toLowerCase().contains("bitcoin")) {
+                containsBitcoin = true;
+            }
         }
-
-        NewsAboutBitcoinList.forEach(article -> {
-            System.out.println(article);
-        });
+        Assertions.assertTrue(containsBitcoin);
     }
 
 }
