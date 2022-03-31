@@ -40,6 +40,15 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("if articleCount is really zero when no articles")
+    public void testIfArticleCountZeroWhenArticlesAreNull() {
+        //AppController appController = new AppController();
+        ctrl.setArticles(null);
+
+        Assertions.assertEquals(0, ctrl.getArticleCount());
+    }
+
+    @Test
     @DisplayName("test if the searched element is in the list")
     public void testIfTheSearchedElementIsInTheList(){
         List<Article> articles = new ArrayList<>();
