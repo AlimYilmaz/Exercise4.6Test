@@ -39,6 +39,13 @@ public class AppControllerTest {
         Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
+    @Test
+    @DisplayName("test if GetTopHeadlinesAustria returns empty when the list is null")
+    public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull(){
+        ctrl.setArticles(null);
+        Assertions.assertEquals(0, ctrl.getTopHeadlinesAustria().size());
+    }
+
     // https://stackoverflow.com/questions/26102865/assertequals-what-is-actual-and-what-is-expected (31.03.)
     @Test
     @DisplayName("if articleCount is really zero when no articles")
