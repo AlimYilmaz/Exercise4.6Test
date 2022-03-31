@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-// with tips from our colleagues
+// with tips from our colleague
 public class AppController {
 
     private List<Article> articles;

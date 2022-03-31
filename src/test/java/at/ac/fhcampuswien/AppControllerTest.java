@@ -50,7 +50,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("if articleCount is really zero when no articles")
     public void testIfArticleCountZeroWhenArticlesAreNull() {
-        //AppController appController = new AppController();
+        //AppController appController = new AppController()
         ctrl.setArticles(null);
 
         Assertions.assertEquals(0, ctrl.getArticleCount());

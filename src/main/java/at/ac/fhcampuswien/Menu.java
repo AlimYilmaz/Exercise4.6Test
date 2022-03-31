@@ -9,7 +9,7 @@ public class Menu {
     private static final String EXIT_MESSAGE = "Thank you for using our service! Bye!";
 
 
-    // prints Menu and lets you put in your option
+    // prints Menu and lets you put in your option.
     public void start() {
 
         Scanner scan = new Scanner(System.in);
