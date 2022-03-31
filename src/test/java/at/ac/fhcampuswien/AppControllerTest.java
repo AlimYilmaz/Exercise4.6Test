@@ -31,7 +31,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("test if articleCount return the number of the articles we have")
     public void testIfArticleCountIs4()
-    {Assertions.assertEquals(ctrl.getArticleCount(),4);}
+    {Assertions.assertEquals(4,ctrl.getArticleCount(),4);}
 
     @Test
     @DisplayName("test if getTopHeadLinesAustria is empty when it has elements in there")
