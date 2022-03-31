@@ -39,18 +39,14 @@ public class AppController {
     }
 
     protected List<Article> filterList(String query, List<Article> articles) {
-        List<Article> filteredList = new ArrayList<>();
+        List<Article> filteredArticels = new ArrayList<>();
         for (int i = 0; i < articles.size(); i++) {
-            if (articles.get(i).getTitle().toLowerCase().contains(query.toLowerCase())) {}
-            filteredList.add(articles.get(i));
+            if (articles.get(i).getTitle().toLowerCase().contains(query.toLowerCase())) {
+                filteredArticels.add(articles.get(i));
+            }
         }
-        return filteredList;
+        return filteredArticels;
 
-//        for (String query : articles) {
-//            if(articles.contains("Query")){
-//                filteredList.add(articles.get());
-//            }
-//        }
     }
 
     public List<Article> getAllNewsBitcoin() {

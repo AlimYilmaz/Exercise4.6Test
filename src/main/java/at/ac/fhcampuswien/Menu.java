@@ -15,7 +15,7 @@ public class Menu {
         Scanner scan = new Scanner(System.in);
         printMenu();
 
-        String option = scan.next();
+//        String input = scan.next();
         handleInputString(scan.next());
     }
 
