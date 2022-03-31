@@ -39,6 +39,7 @@ public class AppControllerTest {
         Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
+    // https://stackoverflow.com/questions/26102865/assertequals-what-is-actual-and-what-is-expected (31.03.)
     @Test
     @DisplayName("if articleCount is really zero when no articles")
     public void testIfArticleCountZeroWhenArticlesAreNull() {
