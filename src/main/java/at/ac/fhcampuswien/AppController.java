@@ -8,6 +8,7 @@ public class AppController {
 
     private List<Article> articles;
     private static int count = 0;
+    private List<Article> returnEmptyArticles;
 
 
     public AppController() {
@@ -15,7 +16,7 @@ public class AppController {
 
     public void setArticles(List<Article> articles) {
 
-    articles = new ArrayList<>();
+    this.articles = articles;
     }
 
     public int getArticleCount() {
@@ -27,9 +28,14 @@ public class AppController {
       }
     }
 
-    public List<Article> getTopHeadlines(List<Article> articles) {
+    public List<Article> getTopHeadlinesAustria() {
+        if (articles == null){
+            return returnEmptyArticles;
+        }
+        else {
 
-        return articles;
+            return articles;
+        }
     }
 
     protected List<Article> filterList(String query, List<Article> articles) {
@@ -45,6 +51,7 @@ public class AppController {
 //            }
 //        }
     }
+
 
     private static List<Article> generateMockList() {
 
