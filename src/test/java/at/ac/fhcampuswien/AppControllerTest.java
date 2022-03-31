@@ -29,14 +29,14 @@ public class AppControllerTest {
     }
 
     @Test
-    @DisplayName("test if articleCount returns zero when null")
-    public void testIfArticleCountIsZeroWhenArticlesNull()
-    {Assertions.assertEquals(ctrl.getArticleCount(),0);}
+    @DisplayName("test if articleCount return the number of the articles we have")
+    public void testIfArticleCountIs4()
+    {Assertions.assertEquals(ctrl.getArticleCount(),4);}
 
     @Test
-    @DisplayName("test if getTopHeadLinesAustria is empty when null")
-    public void  testIfGetTopHeadLinesAustriaIsEmptyWhenNull(){
-        Assertions.assertTrue(ctrl.getTopHeadlinesAustria().isEmpty());
+    @DisplayName("test if getTopHeadLinesAustria is empty when it has elements in there")
+    public void  testIfGetTopHeadLinesAustriaIsEmptyWhenHasElements(){
+        Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
     @Test
