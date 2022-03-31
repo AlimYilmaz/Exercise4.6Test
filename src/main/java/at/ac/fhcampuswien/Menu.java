@@ -1,16 +1,43 @@
 package at.ac.fhcampuswien;
 
+import java.util.Scanner;
+
 public class Menu {
 
     private AppController controller;
     private static final String INVALID_INPUT_MESSAGE = "Invalid input! Please choose a valid option!";
     private static final String EXIT_MESSAGE = "Thank you for using our service! Bye!";
 
+
+    // prints Menu and lets you put in your option
     public void start() {
-        Menu.printMenu();
+
+        Scanner scan = new Scanner(System.in);
+        printMenu();
+
+        String option = scan.next();
+        handleInputString(scan.next());
     }
+
+
      private void handleInputString(String input) {
-       throw new UnsupportedOperationException("Not implemented yet");
+
+        switch (input) {
+
+            case "a":
+                getTopHeadlinesAustria(controller);
+                break;
+            case "b":
+                getAllNewsBitcoin(controller);
+                break;
+            case "y":
+                getArticleCount(controller);
+                break;
+            case "q":
+                printExitMessage();
+            default:
+                printInvalidInputMessage();
+        }
 }
 
 
