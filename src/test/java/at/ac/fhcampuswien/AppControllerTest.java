@@ -20,6 +20,9 @@ public class AppControllerTest {
     @DisplayName("check if setArticle is working by checking if the list is empty")
     public void testIfSetArticleIsWorkingByCheckingList() throws NoSuchFieldException {
         List<Article> articleList = new ArrayList<>();
+        articleList.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
+        articleList.add(new Article("Stephen King","I.T."));
+        articleList.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articleList.add(new Article("George Orwell", "1984"));
         ctrl.setArticles(articleList);
         Assertions.assertTrue(ctrl.getArticleCount() != 0);
@@ -45,7 +48,7 @@ public class AppControllerTest {
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
 
-        List<Article> filteredList = ctrl.filterList("Gestern", articles);
+        List<Article> filteredList = ctrl.filterList("gestern", articles);
         Assertions.assertTrue(filteredList.size() != 0);
     }
 
