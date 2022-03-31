@@ -52,6 +52,11 @@ public class AppController {
 //        }
     }
 
+    public List<Article> getAllNewsBitcoin() {
+
+        return filterList("bitcoin", articles);
+
+    }
 
     private static List<Article> generateMockList() {
 
