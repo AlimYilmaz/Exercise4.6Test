@@ -31,7 +31,7 @@ public class AppControllerTest {
     {Assertions.assertEquals(ctrl.getArticleCount(),0);}
 
     @Test
-    @DisplayName("test if getTopHeadLinesAustria is empty  when null")
+    @DisplayName("test if getTopHeadLinesAustria is empty when null")
     public void  testIfGetTopHeadLinesAustriaIsEmptyWhenNull(){
         Assertions.assertTrue(ctrl.getTopHeadlinesAustria().isEmpty());
     }

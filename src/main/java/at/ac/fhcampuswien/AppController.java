@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 // with tips from our colleagues
@@ -8,7 +9,6 @@ public class AppController {
 
     private List<Article> articles;
     private static int count = 0;
-    private List<Article> returnEmptyArticles;
 
 
     public AppController() {
@@ -29,12 +29,11 @@ public class AppController {
     }
 
     public List<Article> getTopHeadlinesAustria() {
-        if (articles == null){
-            return returnEmptyArticles;
+        if (articles != null){
+            return articles;
         }
         else {
-
-            return articles;
+            return new ArrayList<>();
         }
     }
 
