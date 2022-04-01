@@ -31,7 +31,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("test if articleCount return the number of the articles we have")
     public void testIfArticleCountIs4()
-    {Assertions.assertEquals(4, ctrl.getArticleCount(),4);}
+    {Assertions.assertEquals(4,ctrl.getArticleCount(),4);}
 
     @Test
     @DisplayName("test if getTopHeadLinesAustria is empty when it has elements in there")
@@ -50,7 +50,7 @@ public class AppControllerTest {
     @Test
     @DisplayName("if articleCount is really zero when no articles")
     public void testIfArticleCountZeroWhenArticlesAreNull() {
-        //AppController appController = new AppController()
+        //AppController appController = new AppController();
         ctrl.setArticles(null);
 
         Assertions.assertEquals(0, ctrl.getArticleCount());
@@ -92,6 +92,6 @@ public class AppControllerTest {
             }
         }
         Assertions.assertTrue(containsBitcoin);
-    }
+        }
 
 }
