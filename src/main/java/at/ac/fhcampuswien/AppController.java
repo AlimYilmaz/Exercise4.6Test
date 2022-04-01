@@ -20,6 +20,13 @@ public class AppController {
     }
 
     public int getArticleCount() {
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
+        articles.add(new Article("Stephen King","I.T."));
+        articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
+        articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+
         if (articles == null){ // wenn articles null ist, soll null zurückgegeben werden
             return 0;
         }
