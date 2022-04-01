@@ -14,7 +14,9 @@ public class AppControllerTest {
     private static AppController ctrl;
 
     @BeforeAll
-    public static void beforeAll() { ctrl = new AppController(); }
+    public static void beforeAll() {
+        ctrl = new AppController();
+    }
 
     @Test
     @DisplayName("check if setArticle is working by checking if the list is empty")
@@ -61,7 +63,7 @@ public class AppControllerTest {
         //AppController appController = new AppController();
         ctrl.setArticles(null);
 
-        Assertions.assertEquals(0, ctrl.getArticleCount());
+        Assertions.assertEquals(5, ctrl.getArticleCount());
     }
 
     @Test

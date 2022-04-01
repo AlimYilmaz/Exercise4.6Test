@@ -35,6 +35,7 @@ public class Menu {
                 break;
             case "q":
                 printExitMessage();
+                System.exit(0); // to end the program
             default: // if an invalid letter is chosen
                 printInvalidInputMessage();
         }

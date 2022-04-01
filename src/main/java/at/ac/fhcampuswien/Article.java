@@ -5,7 +5,7 @@ public class Article {
     private String author;
     private String title;
 
-
+    //constructors for two member variables
     public Article(String author, String title){
 
         this.author = author;
