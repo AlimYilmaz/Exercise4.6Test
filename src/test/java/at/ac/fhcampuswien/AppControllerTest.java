@@ -24,19 +24,21 @@ public class AppControllerTest {
         articleList.add(new Article("Stephen King","I.T."));
         articleList.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articleList.add(new Article("George Orwell", "1984"));
+        articleList.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
         ctrl.setArticles(articleList);
         Assertions.assertTrue(ctrl.getArticleCount() != 0);
     }
 
     @Test
     @DisplayName("test if articleCount return the number of the articles we have")
-    public void testIfArticleCountIs4(){
+    public void testIfArticleCountIs5(){
         List<Article> articleList = new ArrayList<>();
         articleList.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
         articleList.add(new Article("Stephen King","I.T."));
         articleList.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articleList.add(new Article("George Orwell", "1984"));
-    Assertions.assertEquals(4,ctrl.getArticleCount(),4);
+        articleList.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+    Assertions.assertEquals(5,ctrl.getArticleCount(),5);
     }
 
     @Test
@@ -70,10 +72,42 @@ public class AppControllerTest {
         articles.add(new Article("Stephen King","I.T."));
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
         List<Article> filteredList = ctrl.filterList("gestern", articles); //searching for "Gestern"
         Assertions.assertTrue(filteredList.size() == 1);
     }
+
+
+    @Test
+    @DisplayName("test if the searched element is in the list")
+    public void testIfTheSearchedElementIsInTheList2(){
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
+        articles.add(new Article("Stephen King","I.T."));
+        articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
+        articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+
+        List<Article> filteredList = ctrl.filterList("1984", articles); //searching for "1984"
+        Assertions.assertTrue(filteredList.size() == 1);
+    }
+
+
+    @Test
+    @DisplayName("test if the searched element is in the list")
+    public void testIfTheSearchedElementIsInTheList3(){
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
+        articles.add(new Article("Stephen King","I.T."));
+        articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
+        articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+
+        List<Article> filteredList = ctrl.filterList("kill", articles); //searching for "kill"
+        Assertions.assertTrue(filteredList.size() == 1);
+    }
+
 
     @Test
     @DisplayName("test checks if the word bitcoin is contained in the list")
@@ -99,5 +133,6 @@ public class AppControllerTest {
         }
         Assertions.assertTrue(containsBitcoin);
         }
+
 
 }

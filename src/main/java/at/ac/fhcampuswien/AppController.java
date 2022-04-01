@@ -39,16 +39,22 @@ public class AppController {
 
     protected List<Article> filterList(String query, List<Article> articles) {
         List<Article> filteredArticles = new ArrayList<>(); //filteredList wird erstellt
-        for (int i = 0; i < articles.size(); i++) { //geht jede Liste durch
+        for (int i = 0; i < articles.size(); i++) { //geht jeden Artikel durch
             if (articles.get(i).getTitle().toLowerCase().contains(query.toLowerCase())) {
                 filteredArticles.add(articles.get(i)); // sucht das Wort
             }
         }
-        return filteredArticles; // gibt die Liste zurück, in dem Query vorkommt
+        return filteredArticles; // gibt den Artikel zurück, in dem Query vorkommt
 
     }
 
     public List<Article> getAllNewsBitcoin() {
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
+        articles.add(new Article("Stephen King","I.T."));
+        articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
+        articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
         return filterList("bitcoin", articles); // Artikel mit Bitcoin zurück
 
@@ -63,6 +69,7 @@ public class AppController {
         articles.add(new Article("Stephen King","I.T."));
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
+        articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
 
         return articles;

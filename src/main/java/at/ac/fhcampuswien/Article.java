@@ -19,6 +19,7 @@ public class Article {
     public String getTitle() {
         return title;
     }
+
     @Override
     public String toString() { //String-Methode wird überschrieben
         return "Title: " + title + "," +
