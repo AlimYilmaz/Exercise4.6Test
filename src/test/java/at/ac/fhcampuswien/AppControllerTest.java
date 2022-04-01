@@ -115,7 +115,7 @@ public class AppControllerTest {
 
     @Test
     @DisplayName("test to see if filter list doesn't contain searched element")
-    public void TestIfFilterListDoesntContainSearchedElement(){
+    public void TestIfFilterListDoesNotContainSearchedElement(){
         String query = "EntryIsNonExisting";
         List<Article> filteredList = ctrl.filterList(query, mocklist); // The List stays empty if the title isn't entailed in the list
         Assertions.assertTrue(filteredList.isEmpty());
@@ -146,7 +146,6 @@ public class AppControllerTest {
             }
         }
         Assertions.assertTrue(containsBitcoin);
-    }
-
+        }
 
 }
