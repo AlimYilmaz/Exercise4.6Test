@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class AppControllerTest {
 
@@ -114,13 +115,34 @@ public class AppControllerTest {
     }
 
     @Test
+    @DisplayName("test if filter list entails searched element")
+    public void TestIfFilterListEntailsSearchedElement(){
+        String  query = "1984"; //searches entry in titles
+        List<Article> filteredList = ctrl.filterList(query, mocklist);
+        Boolean containsQuery = null;
+        if (filteredList.isEmpty()){
+            containsQuery = false;
+        }
+        else{
+            for (Article article : filteredList){
+                if (article.getTitle().toLowerCase().contains(query.toLowerCase())){
+                    containsQuery = true;
+                }
+                else{
+                    containsQuery = false;
+                }
+            }
+        }
+        Assertions.assertTrue(containsQuery);
+    }
+
+    @Test
     @DisplayName("test to see if filter list doesn't contain searched element")
     public void TestIfFilterListDoesNotContainSearchedElement(){
         String query = "EntryIsNonExisting";
         List<Article> filteredList = ctrl.filterList(query, mocklist); // The List stays empty if the title isn't entailed in the list
         Assertions.assertTrue(filteredList.isEmpty());
     }
-
 
     @Test
     @DisplayName("test checks if the word bitcoin is contained in the list")
@@ -146,6 +168,6 @@ public class AppControllerTest {
             }
         }
         Assertions.assertTrue(containsBitcoin);
-        }
+    }
 
 }

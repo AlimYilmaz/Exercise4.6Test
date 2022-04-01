@@ -11,12 +11,19 @@ public class Menu {
 
     // prints Menu and lets you put in your option.
     public void start() {
-
-        Scanner scan = new Scanner(System.in);
         printMenu();
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
 
-//        String input = scan.next();
-        handleInputString(scan.next());
+        while (true){
+            if (input.equals("q")){
+                handleInputString(input);
+                break;
+            }
+            handleInputString(input);
+            start();
+            break;
+        }
     }
 
 
