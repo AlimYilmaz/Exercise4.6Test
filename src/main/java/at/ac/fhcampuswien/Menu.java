@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private AppController controller = new AppController();
+    private AppController controller = new AppController();                     // controller that will be used to handle all requests for our app
     private static final String INVALID_INPUT_MESSAGE = "Invalid input! Please choose a valid option!";
     private static final String EXIT_MESSAGE = "Thank you for using our service! Bye!";
 
@@ -13,16 +13,16 @@ public class Menu {
     public void start() {
         printMenu();
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String input = scanner.nextLine();                                      // waits on the input
 
         while (true){
             if (input.equals("q")){
-                handleInputString(input);
-                break;
+                handleInputString(input);                                       // carries out the case for "q"
+                break;                                                          // ends the endless loop
             }
-            handleInputString(input);
-            start();
-            break;
+            handleInputString(input);                                           // carries out the cases for everything but for "q"
+            start();                                                            // restarts menu
+            break;                                                              // ends the endless loop
         }
     }
 
@@ -42,8 +42,8 @@ public class Menu {
                 break;
             case "q":
                 printExitMessage();
-                System.exit(0); // to end the program
-            default: // if an invalid letter is chosen
+                System.exit(0);                                            // to end the program
+            default:                                                             // if an invalid letter is chosen
                 printInvalidInputMessage();
         }
     }
