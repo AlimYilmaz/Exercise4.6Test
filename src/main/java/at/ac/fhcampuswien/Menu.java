@@ -51,7 +51,7 @@ public class Menu {
 
     private void getArticleCount(AppController ctrl) {
         int numOfArticles = ctrl.getArticleCount();
-        String out  = "Number of articles = " + numOfArticles + "\r\n";
+        String out  = "Number of articles = " + numOfArticles;
         System.out.println(out);
     }
 
