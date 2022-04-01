@@ -23,6 +23,6 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Title: " + title + "\nAuthor: " + author + " "; // https://stackoverflow.com/questions/19008970/java-what-does-n-mean
+        return "Title: " + title + "\nAuthor: " + author; // https://stackoverflow.com/questions/19008970/java-what-does-n-mean
     }
 }
