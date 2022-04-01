@@ -50,8 +50,9 @@ public class Menu {
 
 
     private void getArticleCount(AppController ctrl) {
-        System.out.println(ctrl.getArticleCount());
-
+        int numOfArticles = ctrl.getArticleCount();
+        String out  = "Number of articles = " + numOfArticles + "\r\n" ;
+        System.out.println(out);
     }
 
     private void getTopHeadlinesAustria(AppController ctrl) {
