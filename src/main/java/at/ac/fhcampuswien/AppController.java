@@ -12,6 +12,8 @@ public class AppController {
 
 
     public AppController() {
+
+        articles = generateMockList();
     }
 
     public void setArticles(List<Article> articles) { //Setter für die Artikel Liste

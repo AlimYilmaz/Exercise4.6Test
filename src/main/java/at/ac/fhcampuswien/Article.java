@@ -21,8 +21,8 @@ public class Article {
     }
 
     @Override
-    public String toString() { //String-Methode wird überschrieben
-        return "Title: " + title + "," +
-                "Author: " + author;
+    public String toString() {
+        return "Author: " + author + ","
+                + " Title: " + title + System.lineSeparator() ;
     }
 }
