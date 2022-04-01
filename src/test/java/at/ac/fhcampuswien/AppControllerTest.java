@@ -80,7 +80,7 @@ public class AppControllerTest {
         articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
         List<Article> filteredList = ctrl.filterList("gestern", articles); //searching for "Gestern"
-        Assertions.assertTrue(filteredList.size() == 1);
+        Assertions.assertTrue(filteredList.size() != 0);
     }
 
 
@@ -95,7 +95,7 @@ public class AppControllerTest {
         articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
         List<Article> filteredList = ctrl.filterList("1984", articles); //searching for "1984"
-        Assertions.assertTrue(filteredList.size() == 1);
+        Assertions.assertTrue(filteredList.size() != 0);
     }
 
 
@@ -110,7 +110,15 @@ public class AppControllerTest {
         articles.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
 
         List<Article> filteredList = ctrl.filterList("kill", articles); //searching for "kill"
-        Assertions.assertTrue(filteredList.size() == 1);
+        Assertions.assertTrue(filteredList.size() != 0);
+    }
+
+    @Test
+    @DisplayName("test to see if filter list doesn't contain searched element")
+    public void TestIfFilterListDoesNotContainSearchedElement(){
+        String query = "EntryIsNonExisting";
+        List<Article> filteredList = ctrl.filterList(query, mocklist); // The List stays empty if the title isn't entailed in the list
+        Assertions.assertTrue(filteredList.isEmpty());
     }
 
 
@@ -134,10 +142,10 @@ public class AppControllerTest {
         for (Article article: newsAboutBitcoinList) {
             if (article.getTitle().toLowerCase().contains("bitcoin")) {
                 containsBitcoin = true; // does contain bitcoin --> true
+                break;
             }
         }
         Assertions.assertTrue(containsBitcoin);
         }
-
 
 }
