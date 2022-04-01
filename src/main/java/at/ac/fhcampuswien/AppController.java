@@ -64,6 +64,7 @@ public class AppController {
         articles.add(new Article("Harper Lee", "To kill a Mockingbird"));
         articles.add(new Article("George Orwell", "1984"));
 
+
         return articles;
     }
 

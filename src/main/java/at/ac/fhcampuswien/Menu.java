@@ -35,7 +35,7 @@ public class Menu {
                 break;
             case "q":
                 printExitMessage();
-            default:
+            default: // if an invalid letter is chosen
                 printInvalidInputMessage();
         }
     }

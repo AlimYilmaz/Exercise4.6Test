@@ -20,7 +20,7 @@ public class Article {
         return title;
     }
     @Override
-    public String toString() {
+    public String toString() { //String-Methode wird überschrieben
         return "Title: " + title + "," +
                 "Author: " + author;
     }
