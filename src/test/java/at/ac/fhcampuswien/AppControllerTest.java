@@ -1,9 +1,6 @@
 package at.ac.fhcampuswien;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,35 +9,41 @@ public class AppControllerTest {
 
 
     private static AppController ctrl;
+    private List<Article> mocklist;
+    private Article zweigArticle;
+    private Article kingArticle;
+    private Article leeArticle;
+    private Article orwellArticle;
+    private Article bitcoinArticle;
 
-    @BeforeAll
-    public static void beforeAll() {
+    @BeforeEach
+    void setup() {
         ctrl = new AppController();
+        mocklist = new ArrayList<>();
+        zweigArticle = (new Article("Stefan Zweig", "Die Welt von Gestern"));
+        mocklist.add(zweigArticle);
+        kingArticle = (new Article("Stephen King", "I.T."));
+        mocklist.add(kingArticle);
+        leeArticle = (new Article("Harper Lee", "To kill a Mockingbird"));
+        mocklist.add(leeArticle);
+        orwellArticle = (new Article("George Orwell", "1984"));
+        mocklist.add(orwellArticle);
+        bitcoinArticle = (new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
+        mocklist.add(bitcoinArticle);
+        ctrl.setArticles(mocklist);
     }
+
 
     @Test
     @DisplayName("check if setArticle is working by checking if the list is empty")
-    public void testIfSetArticleIsWorkingByCheckingList() throws NoSuchFieldException { //The code is testing if the article is set
-        List<Article> articleList = new ArrayList<>();
-        articleList.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
-        articleList.add(new Article("Stephen King","I.T."));
-        articleList.add(new Article("Harper Lee", "To kill a Mockingbird"));
-        articleList.add(new Article("George Orwell", "1984"));
-        articleList.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
-        ctrl.setArticles(articleList);
-        Assertions.assertTrue(ctrl.getArticleCount() != 0);
+    public void testIfSetArticleIsWorkingByCheckingList()  { //The code is testing if the article is set
+        Assertions.assertEquals(mocklist.size(), ctrl.getArticleCount());
     }
 
     @Test
     @DisplayName("test if articleCount return the number of the articles we have")
     public void testIfArticleCountIs5(){
-        List<Article> articleList = new ArrayList<>();
-        articleList.add(new Article("Stefan Zweig", "Die Welt von Gestern"));
-        articleList.add(new Article("Stephen King","I.T."));
-        articleList.add(new Article("Harper Lee", "To kill a Mockingbird"));
-        articleList.add(new Article("George Orwell", "1984"));
-        articleList.add(new Article("Saifedean Ammous", "The Bitcoin Standard: The Decentralized Alternative to Central Banking"));
-    Assertions.assertEquals(5,ctrl.getArticleCount(),5);
+        Assertions.assertEquals(5, ctrl.getArticleCount());
     }
 
     @Test

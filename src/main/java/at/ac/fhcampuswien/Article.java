@@ -20,9 +20,9 @@ public class Article {
         return title;
     }
 
+
     @Override
     public String toString() {
-        return "Author: " + author + ","
-                + " Title: " + title + System.lineSeparator() ;
+        return "Title: " + title + "\nAuthor: " + author + " "; // https://stackoverflow.com/questions/19008970/java-what-does-n-mean
     }
 }
